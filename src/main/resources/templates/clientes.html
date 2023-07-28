@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clientes</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" th:href="@{/css/styles.css}" />
-  <link rel="stylesheet" th:href="@{/css/clientes.css}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/css/clientes.css}"/>
 </head>
 <body>
 <div th:replace="menu-fragment :: body"></div>
 
 <div id="content">
-  <header>
-    <h1 class="menu-title">Clientes</h1>
-  </header>
-  <form class="client-form">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
+    <header>
+        <h1 class="menu-title">Clientes</h1>
+    </header>
 
-    <label for="documento">Documento:</label>
-    <input type="text" id="documento" name="documento" required>
-
-    <label for="direccion">Dirección:</label>
-    <input type="text" id="direccion" name="direccion" required>
-
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" name="telefono" required>
-
-    <label for="correo">Correo electrónico:</label>
-    <input type="email" id="correo" name="correo" required>
-
-    <label for="anotaciones">Anotaciones:</label>
-    <textarea id="anotaciones" name="anotaciones"></textarea>
-
-    <div class="buttons">
-      <button type="submit">Guardar</button>
-      <button type="button" onclick="modifyData()">Modificar</button>
-      <button type="button" onclick="clearForm()">Limpiar</button>
+    <!-- Agrega el bloque para mostrar la alerta de error -->
+    <div th:if="${errorMessage}" class="error-alert">
+        <p th:text="${errorMessage}"></p>
     </div>
-  </form>
+
+    <form class="client-form" action="/clientes" method="post" th:object="${cliente}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required>
+
+        <label for="documento">Documento:</label>
+        <input type="text" id="documento" name="documento" th:field="*{documento}" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" th:field="*{direccion}" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" th:field="*{telefono}" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" th:field="*{correo}" required>
+
+        <label for="anotaciones">Anotaciones:</label>
+        <textarea id="anotaciones" name="anotaciones" th:field="*{anotaciones}" rows="4"></textarea>
+
+        <div class="buttons">
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="modifyData()">Modificar</button>
+            <button type="button" onclick="clearForm()">Limpiar</button>
+        </div>
+    </form>
 </div>
 
 <script th:src="@{/js/menu-script.js}" type="text/javascript"></script>
