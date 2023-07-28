@@ -68,3 +68,15 @@ body {
 #content.collapsed {
     margin-left: 80px; /* Ancho reducido del menú colapsado */
 }
+
+
+
+
+/* Estilos para la alerta de error */
+.error-alert {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
