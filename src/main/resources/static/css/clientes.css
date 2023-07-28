@@ -1,0 +1,57 @@
+/* Estilos específicos de la página de personas */
+
+/* Estilos del formulario de personas */
+.client-form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.client-form label,
+.client-form input,
+.client-form textarea,
+.client-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.client-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.client-form .buttons {
+    text-align: right;
+}
+
+/* Estilos para los botones de formulario */
+.client-form button {
+    background-color: #3498db; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s; /* Transición para animación de cambio de color */
+}
+
+.client-form button:hover {
+    background-color: #2980b9; /* Color de fondo del botón al pasar el cursor sobre él */
+}
+
+.client-form button[type="submit"] {
+    background-color: #27ae60; /* Color de fondo del botón "Guardar" */
+}
+
+.client-form button[type="submit"]:hover {
+    background-color: #219652; /* Color de fondo del botón "Guardar" al pasar el cursor sobre él */
+}
+
+.client-form button[type="button"] {
+    background-color: #e74c3c; /* Color de fondo del botón "Modificar" y "Limpiar" */
+}
+
+.client-form button[type="button"]:hover {
+    background-color: #c0392b; /* Color de fondo del botón "Modificar" y "Limpiar" al pasar el cursor sobre él */
+}

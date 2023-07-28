@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del menú lateral */
+#sidebar {
+    width: 250px; /* Ancho inicial del menú colapsado */
+    background-color: #2c3e50; /* Nuevo color de fondo del menú */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: width 0.3s; /* Agregamos una transición para una animación suave */
+}
+
+#sidebar.collapsed {
+    width: 80px; /* Ancho reducido del menú colapsado */
+}
+
+/* Estilos del menú y el texto en el menú colapsado */
+#sidebar.collapsed ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    gap: 5px;
+}
+
+#sidebar.collapsed li {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+/* Estilos del ícono de compresión */
+#compress-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #fff; /* Color del ícono cuando el menú está expandido */
+    transition: color 0.3s; /* Transición para cambiar el color del ícono */
+}
+
+/* Estilos del ícono comprimido */
+#compress-icon.compressed {
+    color: #95a5a6; /* Color del ícono cuando el menú está colapsado */
+}
+
+/* Estilos del contenedor de los íconos */
+.menu-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #34495e; /* Color de fondo del contenedor de los íconos */
+}
+
+/* Estilos del contenido principal */
+#content {
+    margin-left: 250px; /* Ancho inicial del menú colapsado */
+    padding: 20px;
+    transition: margin-left 0.3s; /* Agregamos una transición para una animación suave */
+}
+
+#content.collapsed {
+    margin-left: 80px; /* Ancho reducido del menú colapsado */
+}

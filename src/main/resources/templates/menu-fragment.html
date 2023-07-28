@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<!-- ... -->
+<div id="sidebar" >
+<!--    <h1 class="menu-title">Mi Aplicación</h1>-->
+<!--    <span id="compress-icon" onclick="toggleSidebar()">&#9776;</span>-->
+    <a href="#"><img src="/img/logo.svg" alt="Logo" id="compress-icon" onclick="toggleSidebar()"></a>
+<!--    <div class="menu-icons">-->
+<!--        <a href="#"><i class="fas fa-bars"></i></a>-->
+<!--        <a href="#"><i class="fas fa-users"></i></a>-->
+<!--    </div>-->
+
+    <ul>
+        <li class="has-submenu"><a href="#"><i class="fas fa-users"></i> Personas</a>
+            <ul class="collapsed">
+                <li><a th:href="@{/clientes}"><i class="fas fa-user"></i> Clientes</a></li>
+                <li><a th:href="@{/clientes}"><i class="fas fa-warehouse"></i> Proveedores</a></li>
+            </ul>
+        </li>
+        <li><a href="#"><i class="fas fa-exchange-alt"></i> Movimientos</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i> Operaciones</a></li>
+        <li><a href="#"><i class="fas fa-chart-bar"></i> Reportes</a></li>
+    </ul>
+</div>
+<!-- ... -->
+
+<!--<span id="compress-icon" onclick="toggleSidebar()">&#9776;</span>-->
+</body>
+</html>
