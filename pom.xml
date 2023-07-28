@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Google Sheets Thymeleaf App</name>
+    <name>Control Ventas</name>
     <description>Spring Boot application with Google Sheets and Thymeleaf</description>
 
     <parent>
@@ -68,6 +68,17 @@
             <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Dependencias de MongoDB -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
